@@ -18,5 +18,5 @@ persistent storage:
 # Deploy 
 
 ```
-helm upgrade --install webserver-chart ./webserver-chart
+helm secrets upgrade --install webserver-chart ./webserver-chart -f webserver-chart/secrets.yaml
 ```

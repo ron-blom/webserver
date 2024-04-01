@@ -5,9 +5,9 @@ metadata:
     helm.sh/resource-policy: "keep"
     meta.helm.sh/release-name: "{{ $.Release.Name }}"
     meta.helm.sh/release-namespace: "{{ $.Release.Namespace }}"
-  name: webserver-data
+  name: webserver-storage
   labels:
-    app: webserver-data
+    app: webserver-storage
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -16,5 +16,5 @@ spec:
     - "ReadWriteOnce"
   resources:
     requests:
-      storage: "1Gi"
+      storage: "1G"
   storageClassName: local-path
